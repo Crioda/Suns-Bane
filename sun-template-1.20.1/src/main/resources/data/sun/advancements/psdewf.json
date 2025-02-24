@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "sun:the_awakened_end"
+    },
+    "title": "Sun and Soul",
+    "description": "Craft The Awakened Sun.",
+    "hidden": true,
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "sun:trapped",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sun:the_awakened_end"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

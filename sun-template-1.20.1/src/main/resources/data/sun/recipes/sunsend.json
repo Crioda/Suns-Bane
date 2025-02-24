@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "  m",
+    "nb ",
+    "sn "
+  ],
+  "key": {
+    "s": {
+      "item": "sun:gilded_hilt"
+    },
+    "b": {
+      "item": "minecraft:blaze_rod"
+    },
+    "m": {
+      "item": "sun:sun_shard"
+    },
+    "n": {
+      "item": "minecraft:netherite_scrap"
+    }
+  },
+  "result": {
+    "item": "sun:suns_end"
+  }
+}

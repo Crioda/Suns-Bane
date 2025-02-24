@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "tmt",
+    "tet",
+    "nsn"
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:sculk_shrieker"
+    },
+    "m": {
+      "item": "minecraft:nether_star"
+    },
+    "e": {
+      "item": "minecraft:echo_shard"
+    },
+    "n": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "t": {
+      "item": "minecraft:tinted_glass"
+    }
+  },
+  "result": {
+    "item": "sun:caged_souls"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "sun:suns_end"
+    },
+    "title": "When The Sun Goes Down",
+    "description": "Craft The Sun's End.",
+    "hidden": true,
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "sun:pissrock",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sun:suns_end"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

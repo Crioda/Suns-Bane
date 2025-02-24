@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " dl",
+    "ncd",
+    "sn "
+  ],
+  "key": {
+    "s": {
+      "item": "sun:suns_end"
+    },
+    "d": {
+      "item": "sun:sun_shard"
+    },
+    "l": {
+      "item": "minecraft:diamond_sword"
+    },
+    "n": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "c": {
+      "item": "sun:caged_souls"
+    }
+  },
+  "result": {
+    "item": "sun:the_awakened_end"
+  }
+}

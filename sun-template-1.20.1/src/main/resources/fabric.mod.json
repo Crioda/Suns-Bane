@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "sun",
+	"version": "1.0",
+	"name": "Sun",
+	"description": "Adds weapons, and something extra (:<!",
+	"authors": [
+		"Crit"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/sun/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.crit.sun.Sun"
+		],
+		"fabric-datagen": [
+			"net.crit.sun.SunDataGenerator"
+		]
+	},
+	"mixins": [
+		"sun.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

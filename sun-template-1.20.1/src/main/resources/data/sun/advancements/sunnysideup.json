@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "sun:true_suns_end"
+    },
+    "title": "Eclipsed",
+    "description": "Sunset Has Been.",
+    "hidden": true,
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "sun:whatahoe",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sun:true_suns_end"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

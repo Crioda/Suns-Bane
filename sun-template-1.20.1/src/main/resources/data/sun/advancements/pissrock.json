@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "item": "sun:sun_shard"
+    },
+    "title": "Fractured Stars",
+    "description": "Find Your First Sun Shard.",
+    "background": "minecraft:textures/block/stone.png",
+    "hidden": true,
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sun:sun_shard"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
