@@ -63,7 +63,7 @@ public class Coolitem extends SwordItem {
             ServerWorld nether = user.getServer().getWorld(ServerWorld.NETHER);
             ServerWorld overworld = user.getServer().getWorld(ServerWorld.OVERWORLD);
 
-            String isinoverworld = user.calculateDimensions();
+            String isinoverworld = "yes";
 
             Set<PositionFlag> flags = Set.of(PositionFlag.X);
             int t = 1;
