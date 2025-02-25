@@ -6,6 +6,7 @@ import net.crit.sun.Item.ModItemGroups;
 import net.crit.sun.Item.ModItems;
 
 
+import net.crit.sun.block.ModBlocks;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.block.entity.BlockEntityType;
@@ -31,7 +32,7 @@ public class Sun implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModItems.registerModItems();
-
+		ModBlocks.registerModBlocks();
 		ModItemGroups.registerItemGroups();
 
 

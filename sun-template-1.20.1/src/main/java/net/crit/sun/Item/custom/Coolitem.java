@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 
 import net.crit.sun.Sun;
+import net.crit.sun.world.dimension.ModDimensions;
 import net.minecraft.client.font.UnihexFont;
 import net.minecraft.client.render.DimensionEffects;
 import net.minecraft.entity.LivingEntity;
@@ -19,12 +20,14 @@ import net.minecraft.item.ToolMaterial;
 import net.minecraft.network.packet.s2c.play.PositionFlag;
 import net.minecraft.particle.ParticleType;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
+import net.minecraft.util.profiler.Sampler;
 import net.minecraft.world.World;
 
 import java.util.Set;
@@ -63,7 +66,10 @@ public class Coolitem extends SwordItem {
             ServerWorld nether = user.getServer().getWorld(ServerWorld.NETHER);
             ServerWorld overworld = user.getServer().getWorld(ServerWorld.OVERWORLD);
 
-            String isinoverworld = "yes";
+
+
+
+            Boolean isinoverworld = user.getWorld().getDimension().bedWorks() | user.getWorld().getDimension().hasCeiling();
 
             Set<PositionFlag> flags = Set.of(PositionFlag.X);
             int t = 1;
@@ -75,8 +81,11 @@ public class Coolitem extends SwordItem {
 
                 if (user.isCreative()) {
 
-                    if (t == 1){
-                        user.sendMessage(Text.keybind(isinoverworld));
+                    if (isinoverworld){
+                        user.teleport(nether, 0+x, 128, 0+z, flags, 10,10);
+
+                    } else {
+                        user.teleport(overworld, 0+x, 128, 0+z, flags, 10,10);
                     }
 
 

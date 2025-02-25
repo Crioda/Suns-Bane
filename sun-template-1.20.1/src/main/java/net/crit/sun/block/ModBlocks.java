@@ -3,6 +3,7 @@ package net.crit.sun.block;
 import net.crit.sun.Sun;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
@@ -13,8 +14,12 @@ import net.minecraft.util.Identifier;
 
 public class ModBlocks {
 
-    public final Block BLOCK = registerBlock("block",
-            new Block(FabricBlockSettings.copyOf(Blocks.BAMBOO_BLOCK)));
+
+    public static  Block SUNORE = registerBlock("sunore",
+            new Block(AbstractBlock.Settings.copy(Blocks.ANCIENT_DEBRIS).strength(5f, 3100f)));
+
+    public static  Block TEST = registerBlock("test",
+            new Block(AbstractBlock.Settings.copy(Blocks.ANCIENT_DEBRIS).strength(2f, 10f)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
