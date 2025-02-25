@@ -16,7 +16,7 @@ public class ModBlocks {
 
 
     public static  Block SUNORE = registerBlock("sunore",
-            new Block(AbstractBlock.Settings.copy(Blocks.ANCIENT_DEBRIS).strength(5f, 3100f)));
+            new Block(AbstractBlock.Settings.copy(Blocks.ANCIENT_DEBRIS).strength(4f, 3100f)));
 
     public static  Block TEST = registerBlock("test",
             new Block(AbstractBlock.Settings.copy(Blocks.ANCIENT_DEBRIS).strength(2f, 10f)));
