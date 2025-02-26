@@ -1,4 +1,4 @@
-// 1.20.1	2025-02-25T20:47:00.0809862	Sun/Model Definitions
+// 1.20.1	2025-02-25T21:04:58.4038675	Sun/Model Definitions
 d6603bbd2dbe395b8ba9756df59feb80002d8cc2 assets\sun\models\item\sunore.json
 41426153ddc08fc45429344a168aaa8488cd3c8a assets\sun\models\item\axe_emerald_trim.json
 aa78a56f2233e0c8a97c4b9d2f8e9db5f1f4e5ed assets\sun\models\item\axe_quartz_trim.json
@@ -15,6 +15,6 @@ e9dabdba45d1ff1349927774499b0a2c1e97919e assets\sun\blockstates\sunore.json
 d7414a54f6be0c67c1d9d8b4e578e00a30225362 assets\sun\models\item\suns_end.json
 1042834194c10f3fa2f75f2c090cf56b78b84ff0 assets\sun\models\item\gilded_hilt.json
 5fd975df91dbba5c618dd793b9a9e1ab15ae0e0c assets\sun\models\item\sun_shard.json
+148878f6ff2cfe68001eaa24e5d3e01c0ac4442f assets\sun\models\block\sunore.json
 28cf4d6c45fe332cfe23e134b77d5400f721c953 assets\sun\models\item\axe_amethyst_trim.json
 98858031ba337c0d3ee0702ff7342e206a697e87 assets\sun\models\item\axe_diamond_trim.json
-148878f6ff2cfe68001eaa24e5d3e01c0ac4442f assets\sun\models\block\sunore.json

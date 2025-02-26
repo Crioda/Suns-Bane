@@ -29,6 +29,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.profiler.Sampler;
 import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionOptions;
 
 import java.util.Set;
 
@@ -65,6 +66,8 @@ public class Coolitem extends SwordItem {
         if (!world.isClient()) {
             ServerWorld nether = user.getServer().getWorld(ServerWorld.NETHER);
             ServerWorld overworld = user.getServer().getWorld(ServerWorld.OVERWORLD);
+
+
 
 
 
