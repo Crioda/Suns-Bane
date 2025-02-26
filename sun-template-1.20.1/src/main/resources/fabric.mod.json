@@ -1,11 +1,11 @@
 {
 	"schemaVersion": 1,
 	"id": "sun",
-	"version": "1.0",
-	"name": "Sun",
+	"version": "0.5.0",
+	"name": "Sun's Bane",
 	"description": "Adds weapons, and something extra (:<!",
 	"authors": [
-		"Crit"
+		"Crit, Silliest"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
