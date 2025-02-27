@@ -18,6 +18,7 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SUNORE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MOLTEN_MAGMA);
 
 
     }
@@ -30,7 +31,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.SUNS_END, Models.HANDHELD);
         itemModelGenerator.register(ModItems.CAGED_SOULS, Models.GENERATED);
         itemModelGenerator.register(ModItems.GILDED_HILT,Models.HANDHELD_ROD);
-        itemModelGenerator.register(ModItems.TS,Models.HANDHELD);
+        itemModelGenerator.register(ModItems.TESTITEM,Models.GENERATED);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.AXE);
 
 

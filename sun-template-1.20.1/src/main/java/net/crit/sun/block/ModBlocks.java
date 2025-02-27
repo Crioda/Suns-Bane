@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.MagmaBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -17,6 +18,9 @@ public class ModBlocks {
 
     public static  Block SUNORE = registerBlock("sunore",
             new Block(AbstractBlock.Settings.copy(Blocks.ANCIENT_DEBRIS).strength(4f, 3100f)));
+
+    public static Block MOLTEN_MAGMA = registerBlock("molten_magma",
+            new MagmaBlock(AbstractBlock.Settings.copy(Blocks.MAGMA_BLOCK).strength(2f, 2f)));
 
     public static  Block TEST = registerBlock("test",
             new Block(AbstractBlock.Settings.copy(Blocks.ANCIENT_DEBRIS).strength(2f, 10f)));

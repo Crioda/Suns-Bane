@@ -35,8 +35,8 @@ public class ModItems {
     public static final Item AXE = registerItem("axe",
             new ArmorItem(ModArmorMaterials.BEANS, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 
-    public static final Item TS = registerItem("ts",
-            new TridentItem(new FabricItemSettings()));
+    public static final Item TESTITEM = registerItem("testitem",
+            new Item(new FabricItemSettings()));
 
 
 
