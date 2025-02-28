@@ -1,23 +1,26 @@
-// 1.20.1	2025-02-26T20:32:25.1386575	Sun's Bane/Model Definitions
+// 1.20.1	2025-02-27T19:30:15.9394816	Sun's Bane/Model Definitions
 d6603bbd2dbe395b8ba9756df59feb80002d8cc2 assets\sun\models\item\sunore.json
 41426153ddc08fc45429344a168aaa8488cd3c8a assets\sun\models\item\axe_emerald_trim.json
 aa78a56f2233e0c8a97c4b9d2f8e9db5f1f4e5ed assets\sun\models\item\axe_quartz_trim.json
-065a016de3021e2d25256dbb5ff19d242a8bb1fc assets\sun\models\item\axe_iron_trim.json
 d37ac3fbbac0978ca215b228029322a60ec8fc6e assets\sun\models\item\axe_gold_trim.json
 62a3c60baba72ade6878d83d5160d7db24b1e1fb assets\sun\models\item\axe.json
 6d5af230f2e5bf8b7329af42d0f669584e865c5f assets\sun\models\item\axe_lapis_trim.json
+ac36f22328a3e6488dceb64fbaaae06eb40bd71a assets\sun\blockstates\cooled_molten_magma.json
+e9dabdba45d1ff1349927774499b0a2c1e97919e assets\sun\blockstates\sunore.json
+149490645a1e838970fbc413702b8ee3793e25a3 assets\sun\models\item\testitem.json
+d7414a54f6be0c67c1d9d8b4e578e00a30225362 assets\sun\models\item\suns_end.json
+148878f6ff2cfe68001eaa24e5d3e01c0ac4442f assets\sun\models\block\sunore.json
+18904974c4805df4baa3e287d33839d8277efd18 assets\sun\models\item\cooled_molten_magma.json
+065a016de3021e2d25256dbb5ff19d242a8bb1fc assets\sun\models\item\axe_iron_trim.json
+33a116f97761632b1724130602d583a965f9bd23 assets\sun\models\block\cooled_molten_magma.json
 baf5307621e4fd070c7c0d432cf4df56d49986d9 assets\sun\models\block\molten_magma.json
 ee053638359466cd6db04f7cf587757ca43bc382 assets\sun\blockstates\molten_magma.json
-e9dabdba45d1ff1349927774499b0a2c1e97919e assets\sun\blockstates\sunore.json
 b99eee9a92a9fcf248fa9018a09ab6e83db020ef assets\sun\models\item\molten_magma.json
 80297798e0b841e757ccbff619f6792e86db10dc assets\sun\models\item\axe_copper_trim.json
 113d0f47317234273c2d8e42821978ba0a332b55 assets\sun\models\item\axe_netherite_trim.json
 60807fca0a133400f12e028ff261a414bf5a7f42 assets\sun\models\item\caged_souls.json
 8a3a40563db9eec24b376aa18188dff30019ef34 assets\sun\models\item\axe_redstone_trim.json
-149490645a1e838970fbc413702b8ee3793e25a3 assets\sun\models\item\testitem.json
-d7414a54f6be0c67c1d9d8b4e578e00a30225362 assets\sun\models\item\suns_end.json
 1042834194c10f3fa2f75f2c090cf56b78b84ff0 assets\sun\models\item\gilded_hilt.json
 5fd975df91dbba5c618dd793b9a9e1ab15ae0e0c assets\sun\models\item\sun_shard.json
 28cf4d6c45fe332cfe23e134b77d5400f721c953 assets\sun\models\item\axe_amethyst_trim.json
-148878f6ff2cfe68001eaa24e5d3e01c0ac4442f assets\sun\models\block\sunore.json
 98858031ba337c0d3ee0702ff7342e206a697e87 assets\sun\models\item\axe_diamond_trim.json

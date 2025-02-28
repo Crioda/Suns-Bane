@@ -14,16 +14,16 @@
       "item": "sun:sun_shard"
     },
     "l": {
-      "item": "minecraft:diamond_sword"
+      "item": "minecraft:netherite_sword"
     },
     "n": {
       "item": "minecraft:netherite_ingot"
     },
     "c": {
-      "item": "sun:caged_souls"
+      "item": "minecraft:nether_star"
     }
   },
   "result": {
-    "item": "sun:the_awakened_end"
+    "item": "sun:true_suns_end"
   }
 }

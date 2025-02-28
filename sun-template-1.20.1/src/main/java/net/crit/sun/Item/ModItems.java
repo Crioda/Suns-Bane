@@ -32,11 +32,7 @@ public class ModItems {
     public static final Item THE_AWAKENED_END = registerItem("the_awakened_end",
             new SoulYoinker(ModToolMaterial.SUN_SHARD, 5, -2.7f, new FabricItemSettings()));
 
-    public static final Item AXE = registerItem("axe",
-            new ArmorItem(ModArmorMaterials.BEANS, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 
-    public static final Item TESTITEM = registerItem("testitem",
-            new Item(new FabricItemSettings()));
 
 
 

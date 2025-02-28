@@ -2,6 +2,7 @@ package net.crit.sun.Item;
 
 import net.crit.sun.Sun;
 
+import net.crit.sun.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -17,11 +18,15 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(ModItems.CAGED_SOULS)).entries((displayContext, entries) -> {
 
                         entries.add(ModItems.SUNS_END);
+                        entries.add(ModItems.TRUE_SUNS_END);
+                        entries.add(ModItems.THE_AWAKENED_END);
                         entries.add(ModItems.SUN_SHARD);
                         entries.add(ModItems.CAGED_SOULS);
                         entries.add(ModItems.GILDED_HILT);
-                        entries.add(ModItems.THE_AWAKENED_END);
-                        entries.add(ModItems.TRUE_SUNS_END);
+                        entries.add(ModBlocks.MOLTEN_MAGMA);
+                        entries.add(ModBlocks.SUNORE);
+
+
 
 
                     }).build());

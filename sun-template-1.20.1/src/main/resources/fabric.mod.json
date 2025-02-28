@@ -5,14 +5,14 @@
 	"name": "Sun's Bane",
 	"description": "Adds weapons, and something extra (:<!",
 	"authors": [
-		"Crit, Silliest"
+		"Crit and Silliest"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/Crioda/Suns-Bane/tree/main"
 	},
-	"license": "CC0-1.0",
-	"icon": "assets/sun/icon.png",
+	"license": "MIT",
+	"icon": "assets/sun/textures/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [

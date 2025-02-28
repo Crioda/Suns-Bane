@@ -22,8 +22,7 @@ public class ModBlocks {
     public static Block MOLTEN_MAGMA = registerBlock("molten_magma",
             new MagmaBlock(AbstractBlock.Settings.copy(Blocks.MAGMA_BLOCK).strength(2f, 2f)));
 
-    public static  Block TEST = registerBlock("test",
-            new Block(AbstractBlock.Settings.copy(Blocks.ANCIENT_DEBRIS).strength(2f, 10f)));
+
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

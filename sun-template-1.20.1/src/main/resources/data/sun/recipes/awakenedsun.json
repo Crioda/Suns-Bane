@@ -2,25 +2,28 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "  n",
-    "lg ",
-    "sl "
+    " dl",
+    "ncd",
+    "sn "
   ],
   "key": {
     "s": {
-      "item": "minecraft:stick"
+      "item": "sun:suns_end"
     },
-    "g": {
-      "item": "minecraft:gold_ingot"
+    "d": {
+      "item": "sun:sun_shard"
     },
     "l": {
-      "item": "minecraft:leather"
+      "item": "minecraft:diamond_sword"
     },
     "n": {
-      "item": "minecraft:netherite_scrap"
+      "item": "minecraft:netherite_ingot"
+    },
+    "c": {
+      "item": "sun:caged_souls"
     }
   },
   "result": {
-    "item": "sun:gilded_hilt"
+    "item": "sun:the_awakened_end"
   }
 }
