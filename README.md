@@ -2,4 +2,4 @@ Sun's Bane adds three new weapons to the game that are crafted with a new rare r
 
 THIS MOD IS STILL IN BETA AND IS IN VERY EARLY DEVELOPMENT 
 
-(Also this code is written so badly papyrus wwould cook it for dinner)
+(Also this code is written so badly papyrus would cook it for dinner)
