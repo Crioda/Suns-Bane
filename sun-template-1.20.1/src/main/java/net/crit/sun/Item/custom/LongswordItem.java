@@ -63,6 +63,7 @@ public class LongswordItem extends SwordItem {
             user.getStackInHand(hand).damage(1, user, (player) -> player.sendToolBreakStatus(hand));
 
             // Play sound for ability use
+
             world.playSound(null, user.getBlockPos(), SoundEvents.ITEM_FIRECHARGE_USE, SoundCategory.PLAYERS, 1.0F, 1.0F);
         }
 
@@ -76,6 +77,7 @@ public class LongswordItem extends SwordItem {
         if (!attacker.getWorld().isClient()) {
             // Set the chance for the effect to occur
             int chargeChance = 10; // 10% chance
+            target.setOnFireFor(3);
 
             // Check if the random roll allows applying the effect
             if (attacker.getRandom().nextInt(100) <= chargeChance) {

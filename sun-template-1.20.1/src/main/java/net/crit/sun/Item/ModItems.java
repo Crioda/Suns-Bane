@@ -21,7 +21,7 @@ public class ModItems {
             new Item(new Item.Settings()));
 
     public static final Item SUNS_END = registerItem("suns_end",
-            new SwordItem(ToolMaterials.NETHERITE, 2, -2.1f, new FabricItemSettings()));
+            new SwordItem(ToolMaterials.NETHERITE, 2, -2.9f, new FabricItemSettings()));
 
     public static final Item GILDED_HILT = registerItem("gilded_hilt",
             new HoeItem(ToolMaterials.WOOD, 1, -2f, new FabricItemSettings()));
@@ -30,7 +30,9 @@ public class ModItems {
             new Coolitem(ModToolMaterial.SUN_SHARD, 4, -2.4f, new FabricItemSettings()));
 
     public static final Item THE_AWAKENED_END = registerItem("the_awakened_end",
-            new SoulYoinker(ModToolMaterial.SUN_SHARD, 5, -2.7f, new FabricItemSettings()));
+            new LongswordItem(ModToolMaterial.SUN_SHARD, 5, -2.7f, new FabricItemSettings()));
+
+
 
 
 

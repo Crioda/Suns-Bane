@@ -9,9 +9,10 @@
   "item.sun.gilded_hilt": "Gilded Hilt",
   "item.sun.ts": "Throw Sword",
   "effect.sun.empowered": "Empowered",
-  "effect.sun.tater": "Charged",
+  "effect.sun.charged": "Charged",
+  "effect.sun.tethered": "Tethered",
+  "effect.sun.blanketed": "Blanketed",
   "block.sun.molten_magma": "Molten Blackstone",
-  "block.sun.cooled_molten_magma": "Cooled Molten Blackstone",
   "block.sun.sunore": "Sun Shard Ore"
 
 }

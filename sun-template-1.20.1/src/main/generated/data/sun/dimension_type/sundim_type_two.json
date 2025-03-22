@@ -1,14 +1,14 @@
 {
-  "ambient_light": 2.0,
+  "ambient_light": -0.05,
   "bed_works": true,
   "coordinate_scale": 1.0,
   "effects": "minecraft:the_end",
-  "fixed_time": 12000,
-  "has_ceiling": false,
+  "fixed_time": 10000,
+  "has_ceiling": true,
   "has_raids": false,
   "has_skylight": false,
   "height": 256,
-  "infiniburn": "#minecraft:infiniburn_overworld",
+  "infiniburn": "#minecraft:infiniburn_nether",
   "logical_height": 256,
   "min_y": 0,
   "monster_spawn_block_light_limit": 0,
@@ -21,6 +21,6 @@
   },
   "natural": false,
   "piglin_safe": false,
-  "respawn_anchor_works": true,
+  "respawn_anchor_works": false,
   "ultrawarm": false
 }
