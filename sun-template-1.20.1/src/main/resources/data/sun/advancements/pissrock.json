@@ -5,7 +5,7 @@
     },
     "title": "Fractured Stars",
     "description": "Find Your First Sun Shard.",
-    "background": "minecraft:textures/block/stone.png",
+    "background": "sun:textures/block/molten_magma.png",
     "hidden": true,
     "frame": "task",
     "show_toast": true,

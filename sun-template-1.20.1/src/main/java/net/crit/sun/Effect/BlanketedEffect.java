@@ -5,6 +5,7 @@ import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Items;
 import net.minecraft.network.packet.s2c.play.PositionFlag;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -43,6 +44,7 @@ public class BlanketedEffect extends StatusEffect {
         float pitch = entity.getPitch();
         RegistryKey<World> sundimKey = RegistryKey.of(RegistryKeys.WORLD, new Identifier("sun", "sundim"));
         ServerWorld sun = entity.getServer().getWorld(sundimKey);
+
 
         entity.teleport(sun, x+0, y+0, z+0, flags, yaw+0,pitch+0);
 

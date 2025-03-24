@@ -1,6 +1,12 @@
 {
   "replace": false,
   "values": [
-    "sun:sunore"
+    "sun:sunore",
+    "sun:sun_shard_brick_slab",
+    "sun:sun_shard_bricks",
+    "sun:sun_shard_brick_stairs",
+    "sun:sun_shard_brick_wall",
+    "sun:sun_shard_pillar",
+    "sun:chiseled_sun_shard"
   ]
 }

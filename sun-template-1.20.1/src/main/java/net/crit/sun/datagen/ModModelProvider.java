@@ -19,6 +19,13 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SUNORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MOLTEN_MAGMA);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CHISELED_SUN_SHARD);
+        blockStateModelGenerator.registerLog(ModBlocks.SUN_SHARD_PILLAR).log(ModBlocks.SUN_SHARD_PILLAR);
+
+        BlockStateModelGenerator.BlockTexturePool sunShardPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SUN_SHARD_BRICKS);
+        sunShardPool.stairs(ModBlocks.SUN_SHARD_BRICK_STAIRS);
+        sunShardPool.wall(ModBlocks.SUN_SHARD_BRICK_WALL);
+        sunShardPool.slab(ModBlocks.SUN_SHARD_BRICK_SLAB);
 
 
 

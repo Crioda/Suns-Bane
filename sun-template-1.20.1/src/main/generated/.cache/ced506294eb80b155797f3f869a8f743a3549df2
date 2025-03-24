@@ -1,2 +1,8 @@
-// 1.20.1	2025-03-23T01:07:24.8986376	Sun's Bane/Block Loot Tables
+// 1.20.1	2025-03-23T21:12:42.5101322	Sun's Bane/Block Loot Tables
+4a95f746615c94183a9695d51440a0cc5b781802 data\sun\loot_tables\blocks\sun_shard_bricks.json
+a3237af486679bd030c320744bea5b0c0a673491 data\sun\loot_tables\blocks\sun_shard_brick_wall.json
 587f7fede4d8949c57d45deec2f6ff73369e579c data\sun\loot_tables\blocks\sunore.json
+feb11dc6c900ede5d3f3840823bc0999fa35bbfc data\sun\loot_tables\blocks\sun_shard_brick_slab.json
+dee8a427e99d094d09eb2ddf681dfd804b0624e0 data\sun\loot_tables\blocks\sun_shard_brick_stairs.json
+26edcac62cfb0e4d2ccfaa61b7720eb70ac7f85f data\sun\loot_tables\blocks\chiseled_sun_shard.json
+57a6c52482213b20769fca9a1d3d541b519d4d2a data\sun\loot_tables\blocks\sun_shard_pillar.json

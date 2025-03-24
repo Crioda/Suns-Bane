@@ -1,6 +1,7 @@
 {
   "parent": "sun:item/template_longsword",
   "textures": {
-    "layer0": "sun:item/true_suns_end"
+    "layer0": "sun:item/true_suns_end",
+    "layer1": "sun:item/true_suns_end_e"
   }
 }

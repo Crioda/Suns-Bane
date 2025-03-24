@@ -1,18 +1,26 @@
 {
 
+  "itemgroup.sun": "Sun Items",
+
   "item.sun.true_suns_end": "Sun's Divine Longsword",
   "item.sun.suns_end": "Sun's End",
   "item.sun.sun_shard": "Sun Shard",
   "item.sun.the_awakened_end": "The Awakened Sun",
-  "itemgroup.sun": "Sun Items",
   "item.sun.caged_souls": "Caged Souls",
   "item.sun.gilded_hilt": "Gilded Hilt",
-  "item.sun.ts": "Throw Sword",
+
   "effect.sun.empowered": "Empowered",
   "effect.sun.charged": "Charged",
   "effect.sun.tethered": "Tethered",
   "effect.sun.blanketed": "Blanketed",
+
   "block.sun.molten_magma": "Molten Blackstone",
-  "block.sun.sunore": "Sun Shard Ore"
+  "block.sun.sunore": "Sun Shard Ore",
+  "block.sun.sun_shard_bricks": "Sun Shard Bricks",
+  "block.sun.sun_shard_brick_stairs": "Sun Shard Brick Stairs",
+  "block.sun.sun_shard_brick_slab": "Sun Shard Brick Slab",
+  "block.sun.sun_shard_brick_wall": "Sun Shard Brick Wall",
+  "block.sun.sun_shard_pillar": "Sun Shard Pillar",
+  "block.sun.chiseled_sun_shard": "Chiseled Sun Shard Block"
 
 }

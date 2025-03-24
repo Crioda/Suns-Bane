@@ -14,6 +14,7 @@ import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
@@ -42,14 +43,14 @@ public class LongswordItem extends SwordItem {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if (!world.isClient()) {
-            double radius = 5.0;  // Define the radius around the user
+            double radius = 5.0;
 
             world.getEntitiesByClass(
-                    LivingEntity.class,  // Target all living entities
-                    user.getBoundingBox().expand(radius),  // Expand around the user
-                    entity -> entity != user  // Exclude the user themselves
+                    LivingEntity.class,
+                    user.getBoundingBox().expand(radius),
+                    entity -> entity != user
             ).forEach(entity -> {
-                // Set the entity on fire for 5 seconds
+
                 entity.setOnFireFor(5);
 
 
@@ -58,11 +59,13 @@ public class LongswordItem extends SwordItem {
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 10, 0));
 
 
-            // Apply cooldown and item damage
+
+
+
             user.getItemCooldownManager().set(this, 400);
             user.getStackInHand(hand).damage(1, user, (player) -> player.sendToolBreakStatus(hand));
 
-            // Play sound for ability use
+
 
             world.playSound(null, user.getBlockPos(), SoundEvents.ITEM_FIRECHARGE_USE, SoundCategory.PLAYERS, 1.0F, 1.0F);
         }
@@ -75,18 +78,18 @@ public class LongswordItem extends SwordItem {
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if (!attacker.getWorld().isClient()) {
-            // Set the chance for the effect to occur
-            int chargeChance = 10; // 10% chance
+
+            int chargeChance = 10;
             target.setOnFireFor(3);
 
-            // Check if the random roll allows applying the effect
+
             if (attacker.getRandom().nextInt(100) <= chargeChance) {
-                // Apply Levitation effect to the target
+
                 target.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 100, 1), attacker);
             }
         }
 
-        // Call the parent method to ensure standard behavior
+
         return super.postHit(stack, target, attacker);
     }
 

@@ -1,3 +1,5 @@
-// 1.20.1	2025-03-23T01:07:24.8996379	Sun's Bane/Tags for minecraft:block
+// 1.20.1	2025-03-23T21:12:42.511134	Sun's Bane/Tags for minecraft:block
+4be3aee6ef4cadd3ddd8a584890b3b0c5a856ae1 data\minecraft\tags\blocks\walls.json
 3df4f70659a8c494141b85ddbe6c101503a367e8 data\minecraft\tags\blocks\needs_diamond_tool.json
-3df4f70659a8c494141b85ddbe6c101503a367e8 data\minecraft\tags\blocks\mineable\pickaxe.json
+58634f1c4ab67af7a632c0449bef7a1c18c242ef data\minecraft\tags\blocks\mineable\pickaxe.json
+ac499d4381af2532afb8b90d3e74bed0ab5ea47a data\minecraft\tags\blocks\needs_iron_tool.json

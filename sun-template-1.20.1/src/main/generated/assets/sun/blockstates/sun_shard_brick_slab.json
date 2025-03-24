@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "sun:block/sun_shard_brick_slab"
+    },
+    "type=double": {
+      "model": "sun:block/sun_shard_bricks"
+    },
+    "type=top": {
+      "model": "sun:block/sun_shard_brick_slab_top"
+    }
+  }
+}

@@ -2,6 +2,7 @@ package net.crit.sun.Item.custom;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+
 import net.crit.sun.Sun;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
@@ -20,24 +21,23 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.TypedActionResult;
+import net.minecraft.util.math.Position;
 import net.minecraft.world.World;
 
+import java.util.Objects;
 import java.util.Set;
 
-public class DivineLongsword extends SwordItem {
+public class DivineLongswordItem extends SwordItem {
 
 
     private final float attackDamage;
     private final Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
-    private int charge = 0;
 
 
-
-    public DivineLongsword(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
+    public DivineLongswordItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
         this.attackDamage = attackDamage + material.getAttackDamage();
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
@@ -57,7 +57,6 @@ public class DivineLongsword extends SwordItem {
 
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
-
         super.onStoppedUsing(stack, world, user, remainingUseTicks);
     }
 
@@ -70,61 +69,78 @@ public class DivineLongsword extends SwordItem {
         float pitch = user.getPitch();
 
 
-
         if (!world.isClient()) {
 
             RegistryKey<World> sundimKey = RegistryKey.of(RegistryKeys.WORLD, new Identifier("sun", "sundim"));
-            RegistryKey<World> sundimKey2 = RegistryKey.of(RegistryKeys.WORLD, new Identifier("sun2", "sundim2"));
+            RegistryKey<World> sundimKey2 = RegistryKey.of(RegistryKeys.WORLD, new Identifier("sun", "sundim2"));
 
-
-            ServerWorld sun = user.getServer().getWorld(sundimKey);
+            ServerWorld sun = Objects.requireNonNull(user.getServer()).getWorld(sundimKey);
             ServerWorld sun2 = user.getServer().getWorld(sundimKey2);
 
 
-            ServerWorld end = user.getServer().getWorld(ServerWorld.END);
-            ServerWorld nether = user.getServer().getWorld(ServerWorld.NETHER);
-            ServerWorld overworld = user.getServer().getWorld(ServerWorld.OVERWORLD);
-
-
-
-
-
-
-            Boolean shouldBeTeleportedToSun = user.getWorld().getDimension().equals(overworld) || user.getWorld().getDimension().equals(nether) || user.getWorld().getDimension().equals(end);
-            Boolean onSun = user.getWorld().getDimension().equals(sun);
-            Boolean onSun2 = user.getWorld().getDimension().equals(sun2);
-
-
+            boolean onSun = user.getWorld().getDimension().bedWorks() && user.getWorld().getDimension().respawnAnchorWorks();
             Set<PositionFlag> flags = Set.of(PositionFlag.X);
-            int t = 1;
+
+            if (user.hasStatusEffect(Sun.EMPOWERED_EFFECT)) {
+                if (user.isCreative()) {
+                    for (int i = 0; i < 10; i++) {
+                        ((ServerWorld) world).spawnParticles(ParticleTypes.CLOUD,
+                                x + 0, y + 0,
+                                z + 0, 100, .3, 1, .3, 0.1);
+
+                        ((ServerWorld) world).spawnParticles(ParticleTypes.ASH,
+                                x + 0, y + 0,
+                                z + 0, 10, .5, 1.5, .5, 0.1);
+
+                    }
+
+                    user.getStackInHand(hand).damage(1, user, (player) -> player.sendToolBreakStatus(hand));
+                    world.playSound(null, user.getBlockPos(), SoundEvents.ENTITY_ILLUSIONER_CAST_SPELL, SoundCategory.PLAYERS, 10.0F, -1.0F);
+
+                    if (onSun) {
+                        user.teleport(sun2, x+0, y+0, z+0, flags, yaw+0,pitch+0);
+                        user.addStatusEffect(new StatusEffectInstance(Sun.BLANKETED_EFFECT, 250, 0));
+
+                    } else {
 
 
 
+                        user.teleport(sun, x+0, y+0, z+0, flags, yaw+0,pitch+0);
+                        user.removeStatusEffect(Sun.BLANKETED_EFFECT);
+                    }
 
-            if (user.hasStatusEffect(Sun.EMPOWERED_EFFECT) ) {
+                } else {
+                    for (int i = 0; i < 10; i++) {
+                        ((ServerWorld) world).spawnParticles(ParticleTypes.CLOUD,
+                                x + 0, y + 0,
+                                z + 0, 100, .3, 1, .3, 0.1);
 
-                if (onSun) {
+                        ((ServerWorld) world).spawnParticles(ParticleTypes.ASH,
+                                x + 0, y + 0,
+                                z + 0, 10, .5, 1.5, .5, 0.1);
 
-                    user.teleport(sun2, x+0, y+0, z+0, flags, yaw+0,pitch+0);
+                    }
 
-                }
+                    world.playSound(null, user.getBlockPos(), SoundEvents.ENTITY_ILLUSIONER_CAST_SPELL, SoundCategory.PLAYERS, 10.0F, -1.0F);
+
+                    if (onSun) {
+                        user.teleport(sun2, x+0, y+0, z+0, flags, yaw+0,pitch+0);
+                        user.addStatusEffect(new StatusEffectInstance(Sun.BLANKETED_EFFECT, 250, 0));
+                        user.getItemCooldownManager().set(this, 50);
+
+                    } else {
+                        user.teleport(sun, x+0, y+0, z+0, flags, yaw+0,pitch+0);
+                        user.removeStatusEffect(Sun.BLANKETED_EFFECT);
+                        user.getItemCooldownManager().set(this, 200);
+                    }
 
 
 
-
-                    user.getItemCooldownManager().set(this, 100);
                     user.getStackInHand(hand).damage(1, user, (player) -> player.sendToolBreakStatus(hand));
 
-
-                    world.playSound(null, user.getBlockPos(), SoundEvents.ITEM_FIRECHARGE_USE, SoundCategory.PLAYERS, 1.0F, 1.0F);
-
-
+                }
+            //Charged ability
             } else if (user.hasStatusEffect(Sun.CHARGED_EFFECT)) {
-
-
-                user.addStatusEffect(new StatusEffectInstance(StatusEffects.INSTANT_DAMAGE, 10, 1));
-
-                double radius = 5.0;
 
                 for (int i = 0; i < 6; i++) {
                     ((ServerWorld) world).spawnParticles(ParticleTypes.LAVA,
@@ -137,11 +153,7 @@ public class DivineLongsword extends SwordItem {
 
                 }
 
-                for (int b = 0; b < 1000; b++) {
-
-                    user.sendMessage(Text.keybind("b"));
-
-                }
+                double radius = 5.0;
 
                 world.getEntitiesByClass(
                         LivingEntity.class,
@@ -152,21 +164,23 @@ public class DivineLongsword extends SwordItem {
                     double ey = entity.getY();
                     double ez = entity.getZ();
 
-                    entity.teleport(sun, ex+0, 128, ez+0, flags, yaw+0,pitch+0);
-                    entity.addStatusEffect(new StatusEffectInstance(StatusEffects.INSTANT_DAMAGE, 1, 1));
+                    entity.teleport(sun, ex+0, 128, ez+0, flags, 10,10);
+                    entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 400, 0));
+                    entity.addStatusEffect(new StatusEffectInstance(Sun.TETHERED_EFFECT, 72000, 0));
                 });
 
 
-
-                //user.teleport(sun, 0+x, 128, 0+z, flags, yaw+0,pitch+0);
+                user.removeStatusEffect(Sun.CHARGED_EFFECT);
+                user.teleport(sun, 0+x, 128, 0+z, flags, 10,10);
+                user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 400, 1));
                 user.getItemCooldownManager().set(this, 200);
                 user.getStackInHand(hand).damage(1, user, (player) -> player.sendToolBreakStatus(hand));
                 world.playSound(null, user.getBlockPos(), SoundEvents.ENTITY_WANDERING_TRADER_DRINK_POTION, SoundCategory.PLAYERS, 1.0F, 1.0F);
-                user.addStatusEffect(new StatusEffectInstance(Sun.EMPOWERED_EFFECT, 10000, -1));
+                user.addStatusEffect(new StatusEffectInstance(Sun.EMPOWERED_EFFECT, 36000, 0));
+                user.addStatusEffect(new StatusEffectInstance(Sun.TETHERED_EFFECT, 72000, 0));
 
             } else {
                 //No power
-
                 if (user.isCreative()) {
 
 
@@ -182,6 +196,19 @@ public class DivineLongsword extends SwordItem {
                         entity.setOnFireFor(5);
 
                     });
+                    for (int i = 0; i < 21; i++) {
+
+                        ((ServerWorld) world).spawnParticles(ParticleTypes.FLAME,
+                                x + 0, y + .2,
+                                z + 0, 15, 2, 0.1, 2, 0);
+
+                    }
+                    ((ServerWorld) world).spawnParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE,
+                            x + 0, y + 0,
+                            z + 0, 50, 2, 0.1, 2, 0.2);
+
+
+
 
                     user.getItemCooldownManager().set(this, 1);
                     user.getStackInHand(hand).damage(1, user, (player) -> player.sendToolBreakStatus(hand));
@@ -204,45 +231,47 @@ public class DivineLongsword extends SwordItem {
 
                     });
 
-                    user.getItemCooldownManager().set(this, 600);
+                    for (int i = 0; i < 21; i++) {
+
+                        ((ServerWorld) world).spawnParticles(ParticleTypes.FLAME,
+                                x + 0, y + .2,
+                                z + 0, 15, 2, 0.1, 2, 0);
+
+                    }
+                    ((ServerWorld) world).spawnParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE,
+                            x + 0, y + 0,
+                            z + 0, 50, 2, 0.1, 2, 0.2);
+
+                    user.getItemCooldownManager().set(this, 150);
                     user.getStackInHand(hand).damage(1, user, (player) -> player.sendToolBreakStatus(hand));
                     world.playSound(null, user.getBlockPos(), SoundEvents.ITEM_FIRECHARGE_USE, SoundCategory.PLAYERS, 1.0F, 1.0F);
 
                 }
-
             }
         }
-
-
         return TypedActionResult.success(user.getStackInHand(hand));
     }
+
+    //After attack giving charged effect
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if (!attacker.getWorld().isClient()) {
             int chargeChance = 10;
-            if (attacker.getRandom().nextInt(100) <= chargeChance) {
-                target.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 150, 1), attacker);
-                target.setOnFireFor(3);
+            if (attacker.getRandom().nextInt(50) <= chargeChance) {
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS, 150, 1), attacker);
             }
-
             if (target.isPlayer()) {
-                attacker.addStatusEffect(new StatusEffectInstance(Sun.CHARGED_EFFECT, 37500, 0));
-
                 if (attacker.getRandom().nextInt(100) <= chargeChance) {
-                    attacker.addStatusEffect(new StatusEffectInstance(Sun.CHARGED_EFFECT, 37500, 0));
+                    attacker.addStatusEffect(new StatusEffectInstance(Sun.CHARGED_EFFECT, 36000, 0));
+
                 }
             } else {
-
                 if (attacker.getRandom().nextInt(1000) <= chargeChance) {
-                    attacker.addStatusEffect(new StatusEffectInstance(Sun.CHARGED_EFFECT, 1500, 0));
+                    attacker.addStatusEffect(new StatusEffectInstance(Sun.CHARGED_EFFECT, 36000, 0));
                 }
-
             }
-
-
         }
-
         return super.postHit(stack, target, attacker);
     }
     }

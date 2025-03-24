@@ -1,3 +1,5 @@
-// 1.20.1	2025-03-23T01:07:24.8966385	Sun's Bane/World Gen
-f3ee00a68725a03cd36932553addbef7568690ed data\sun\dimension_type\sundim_type.json
-b976298c36acad0e01a7dbb521eb7bbb85909313 data\sun\dimension_type\sundim_type_two.json
+// 1.20.1	2025-03-23T21:12:42.508133	Sun's Bane/World Gen
+4bbdbcfda1d6a32a6e320ce966b2da5bafce5320 data\sun\worldgen\configured_feature\sunore.json
+3a0bd975eae4081720dfe10c7ee8d4ad6027a7aa data\sun\dimension_type\sundim_type.json
+cf0c2acc961e6c9c0ddad7d7c0ad5b903034f48e data\sun\dimension_type\sundim_type_two.json
+0b56a695e3184c9e776d68805527bff8c38939b9 data\sun\worldgen\placed_feature\sunore_placed.json

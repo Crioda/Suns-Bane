@@ -9,6 +9,7 @@ import net.crit.sun.Item.ModItems;
 
 
 import net.crit.sun.block.ModBlocks;
+import net.crit.sun.world.gen.ModWorldGen;
 import net.fabricmc.api.ModInitializer;
 
 
@@ -43,6 +44,8 @@ public class Sun implements ModInitializer {
 		Registry.register(Registries.STATUS_EFFECT, new Identifier("sun", "empowered"), EMPOWERED_EFFECT);
 		Registry.register(Registries.STATUS_EFFECT, new Identifier("sun", "tethered"), TETHERED_EFFECT);
 		Registry.register(Registries.STATUS_EFFECT, new Identifier("sun", "blanketed"), BLANKETED_EFFECT);
+
+		ModWorldGen.generateModWorldGen();
 
 
 
